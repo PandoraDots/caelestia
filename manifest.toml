@@ -1,4 +1,4 @@
-packages = ["caelestia-shell", "caelestia-cli"]
+packages = []
 post_install = [
     "test -f ${XDG_STATE_HOME:-$HOME/.local/state}/caelestia/scheme.json || caelestia scheme set -n caelestia",
     "caelestia shell -d >/dev/null",
@@ -219,6 +219,22 @@ packages = ["zed"]
 [[components.entries]]
 src = "zed"
 dest = "$XDG_CONFIG_HOME/zed"
+
+[[components]]
+name = "cursor"
+packages = ["cursor-bin"]
+post_install = [
+    "cursor --install-extension $CAELESTIA_DOTS/vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix",
+]
+[[components.entries]]
+src = "vscode/settings.json"
+dest = "$XDG_CONFIG_HOME/Cursor/User/settings.json"
+[[components.entries]]
+src = "vscode/keybindings.json"
+dest = "$XDG_CONFIG_HOME/Cursor/User/keybindings.json"
+[[components.entries]]
+src = "vscode/flags.conf"
+dest = "$XDG_CONFIG_HOME/cursor-flags.conf"
 
 [[components]]
 name = "discord"
