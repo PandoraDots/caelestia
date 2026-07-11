@@ -115,7 +115,8 @@ hl.window_rule({
 })
 hl.window_rule({ match = { initial_title = "Spotify( %(?Free%)?)?" }, workspace = "special:music" }) -- Spotify wayland, it has no class for some reason
 hl.window_rule({ match = { class = "discord|equibop|equicord|vesktop|whatsapp" }, workspace = "special:communication" })
-hl.window_rule({ match = { class = "Todoist" }, workspace = "special:todo" })
+hl.window_rule({ match = { class = "zapzap" }, workspace = "special:whatsapp" })
+hl.window_rule({ match = { class = "Todoist|io.github.alainm23.planify|planify|Planify" }, workspace = "special:todo" })
 
 -------------------------
 ---- Workspace rules ----
